@@ -1,6 +1,14 @@
+def denovo():
+    n = int(input("Digite 1 se quer calcular suas notas\nDigite 0 se quer encerrar o programa\n"))
+    if n != 1 and n != 0:
+        print("Invalido! Encerrando por falta de opções...")    
+    return n
+
 nota = []
-while(len(nota) != 3):
-    num = int(input("Insira sua nota: \n"))
+
+while denovo() == 1:
+    while(len(nota) != 3):
+        num = float(input("Insira sua nota: \n"))
 
     if num < 0 or num > 10:
         print("Nota invalida")
@@ -13,6 +21,10 @@ qtd = len(nota)
 media = soma/qtd
 
 print("Sua media e: ", media)
-    
-def denovo():
+if media >= 7:
+    print("Parabens, você passou de ano!")
+elif media < 7 and media > 5:
+    print("Por pouco! Voce esta de recuperacao")
+else:
+    print("Reprovado")
     
